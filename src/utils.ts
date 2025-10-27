@@ -31,6 +31,7 @@ export function fetch(url: string, localPath: string): Promise<string> {
       })
         .then((res) => res.buffer())
         .then((text) => {
+          // @ts-ignore
           fs.writeFileSync(localPath, text);
           resolve(text.toString("utf8"));
         })
