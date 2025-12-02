@@ -23,7 +23,7 @@ exports.refreshBarrage = async function () {
   if (!fs.existsSync("./web/barrages")) fs.mkdirSync("./web/barrages");
   if (!fs.existsSync("./web/files")) fs.mkdirSync("./web/files");
   let tables = new JSDOM(
-    await fetch("https://azurlane.koumakan.jp/Barrage", "./web/barrages/index.html")
+    await fetch("https://azurlane.koumakan.jp/wiki/Barrage", "./web/barrages/index.html")
   ).window.document.getElementsByClassName("wikitable");
   let barrages = (await parseTable(tables[0], "ship"))
     .concat(await parseTable(tables[1], "class"))
