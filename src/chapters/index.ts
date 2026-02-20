@@ -14,7 +14,7 @@ export async function refreshChapter() {
   let names = parseChaptersNames(
     new JSDOM(
       await fetch(
-        "https://azurlane.koumakan.jp/Campaign",
+        "https://azurlane.koumakan.jp/wiki/Campaign",
         path.join(ROOT, "web", "chapters", "index.html")
       )
     ).window.document
@@ -26,7 +26,7 @@ export async function refreshChapter() {
       parseChapter(
         new JSDOM(
           await fetch(
-            "https://azurlane.koumakan.jp/Chapter_" + i,
+            "https://azurlane.koumakan.jp/wiki/Chapter_" + i,
             path.join(ROOT, "web", "chapters", i + ".html")
           )
         ).window.document,
