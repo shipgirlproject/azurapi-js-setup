@@ -49,7 +49,7 @@ export async function refreshEQImages() {
 export async function refreshEquipments() {
   process.stdout.write("Refreshing Equipments");
   let data = await fetch(
-    "https://azurlane.koumakan.jp/Equipment_List",
+    "https://azurlane.koumakan.jp/wiki/Equipment_List",
     path.resolve(ROOT, "web/equipments/index.html")
   );
   process.stdout.write("EQ Menu Loaded\n");
